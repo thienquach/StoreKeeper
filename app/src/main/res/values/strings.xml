@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StoreKeeper</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="product_array">
+        <item>Drinks</item>
+        <item>Snack</item>
+        <item>Cigar</item>
+        <item>Food</item>
+    </string-array>
+</resources>
