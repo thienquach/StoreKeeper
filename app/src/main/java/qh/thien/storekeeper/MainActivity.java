@@ -1,5 +1,6 @@
 package qh.thien.storekeeper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ListAdapter;
 
 import java.util.List;
+
+import qh.thien.storekeeper.product.ProductActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Start adding product", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".product.ProductActivity"
+    tools:showIn="@layout/activity_product">
+
+    <EditText
+        android:id="@+id/act_product_et_product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/act_product_et_product_stock_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="stock price"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/act_product_et_product_name" />
+
+    <EditText
+        android:id="@+id/act_product_et_product_selling_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="selling price"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/act_product_et_product_stock_price" />
+
+    <Button
+        android:id="@+id/act_product_btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
