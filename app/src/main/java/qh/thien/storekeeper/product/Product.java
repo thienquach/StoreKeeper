@@ -1,19 +1,28 @@
 package qh.thien.storekeeper.product;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Index;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(indices = {@Index(value = {"barCode", "name"}, unique = true)})
 public class Product {
-    private String code;
+    @PrimaryKey
+    private int uid;
+    private String barCode;
     private String name;
     private Double stockPrice;
     private Double sellingPrice;
 
-    public Product(){}
-
-    public String getCode() {
-        return code;
+    public Product() {
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public String getBarCode() {
+        return barCode;
+    }
+
+    public void setBarCode(String barCode) {
+        this.barCode = barCode;
     }
 
     public String getName() {
