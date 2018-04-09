@@ -8,13 +8,21 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(indices = {@Index(value = {"barCode", "name"}, unique = true)})
 public class Product {
     @PrimaryKey
-    private int uid;
+    private Integer uid;
     private String barCode;
     private String name;
     private Double stockPrice;
     private Double sellingPrice;
 
     public Product() {
+    }
+
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public String getBarCode() {

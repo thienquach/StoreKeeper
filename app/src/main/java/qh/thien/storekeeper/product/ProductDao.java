@@ -17,7 +17,7 @@ public interface ProductDao {
     LiveData<List<Product>> getAll();
 
     @Query("SELECT p.name FROM product p")
-    LiveData<List<Product>> getAllNames();
+    LiveData<List<String>> getAllNames();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Product product);
