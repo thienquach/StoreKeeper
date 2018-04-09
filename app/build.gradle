@@ -16,6 +16,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
@@ -38,8 +41,8 @@ dependencies {
     annotationProcessor "android.arch.persistence.room:compiler:1.1.0-beta1"
     androidTestImplementation "android.arch.persistence.room:testing:1.1.0-beta1"
 
-    // alternatively, just LiveData
-    implementation "android.arch.lifecycle:livedata:1.1.1"
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:1.1.1"
 }
 
 allprojects {

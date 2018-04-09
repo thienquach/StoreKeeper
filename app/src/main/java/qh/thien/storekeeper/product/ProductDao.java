@@ -1,5 +1,6 @@
 package qh.thien.storekeeper.product;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -13,10 +14,10 @@ import java.util.List;
 public interface ProductDao {
 
     @Query("SELECT * FROM product")
-    List<Product> getAll();
+    LiveData<List<Product>> getAll();
 
     @Query("SELECT p.name FROM product p")
-    List<Product> getAllNames();
+    LiveData<List<Product>> getAllNames();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Product product);
@@ -26,4 +27,7 @@ public interface ProductDao {
 
     @Delete
     void delete(Product product);
+
+    @Query("SELECT * FROM product p WHERE p.uid = :productId")
+    LiveData<Product> getById(int productId);
 }
