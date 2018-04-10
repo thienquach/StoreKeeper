@@ -43,4 +43,8 @@ public class ProductRepository {
     public LiveData<Product> findProduct(final int productId){
         return appDatabase.productDao().getById(productId);
     }
+
+    public void insert(Product productTobeSaved) {
+        appDatabase.productDao().insert(productTobeSaved);
+    }
 }

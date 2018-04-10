@@ -2,12 +2,13 @@ package qh.thien.storekeeper.product;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(indices = {@Index(value = {"barCode", "name"}, unique = true)})
 public class Product {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private Integer uid;
     private String barCode;
     private String name;

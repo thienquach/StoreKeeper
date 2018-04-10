@@ -26,4 +26,8 @@ public class StoreKeeperApp extends Application{
     public ProductRepository getProductRepository(){
         return ProductRepository.getInstance(getDataBase());
     }
+
+    public AppExecutors getAppExecutors() {
+        return appExecutors;
+    }
 }

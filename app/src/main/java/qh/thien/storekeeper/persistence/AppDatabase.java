@@ -13,7 +13,7 @@ import qh.thien.storekeeper.AppExecutors;
 import qh.thien.storekeeper.product.Product;
 import qh.thien.storekeeper.product.ProductDao;
 
-@Database(entities = {Product.class}, version = 1, exportSchema = false)
+@Database(entities = {Product.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String DATABASE_NAME = "StoreKeeperDB";
     private static AppDatabase instance;
@@ -36,7 +36,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
 
     private static AppDatabase buildDatabase(final Context applicationContext, final AppExecutors executors) {
-        return Room.databaseBuilder(applicationContext, AppDatabase.class, DATABASE_NAME).addCallback(new Callback() {
+        return Room.databaseBuilder(applicationContext, AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().addCallback(new Callback() {
             @Override
             public void onCreate(@NonNull SupportSQLiteDatabase db) {
                 super.onCreate(db);
