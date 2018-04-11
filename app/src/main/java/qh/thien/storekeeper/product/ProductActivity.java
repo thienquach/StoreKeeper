@@ -35,9 +35,13 @@ public class ProductActivity extends AppCompatActivity {
                 productTobeSaved.setSellingPrice(Double.parseDouble(getTextFromEditText(R.id.act_product_et_product_selling_price)));
                 productTobeSaved.setStockPrice(Double.parseDouble(getTextFromEditText(R.id.act_product_et_product_stock_price)));
 
-                ((StoreKeeperApp)getApplication()).getAppExecutors().diskIO().execute(() -> {
-                    ((StoreKeeperApp)getApplication()).getProductRepository().insert(productTobeSaved);
+                getApplication().getAppExecutors().diskIO().execute(() -> {
+                    getApplication().getProductRepository().insert(productTobeSaved);
                 });
+            }
+
+            private StoreKeeperApp getApplication() {
+                return (StoreKeeperApp)getApplication();
             }
         });
     }
